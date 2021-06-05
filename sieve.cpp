@@ -3,10 +3,9 @@ using namespace std;
 typedef long long int ll;
 #define N 1000001
 
-bitset<N> Primes;
+vector<ll> Primes(N, 1);
 
 void Sieve(){
-    Primes.set();
     Primes[0]=Primes[1]=0;
     for(ll i=2; i<N; i++){
         if(Primes[i]){
