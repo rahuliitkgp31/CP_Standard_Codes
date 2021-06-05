@@ -1,17 +1,17 @@
-void sieve() {
-    primes[1] = 1;
-    for (ll i = 2; i < MAXN; i++) {
-        primes[i] = i;
-    }
-    for (ll i = 4; i < MAXN; i += 2) {
-        primes[i] = 2;
-    }
-    for (ll i = 3; i * i < MAXN; i++) {
-        if (primes[i] == i) {
-            for (ll j = i * i; j < MAXN; j += i) {
-                if (primes[j] == j) {
-                    primes[j] = i;
-                }
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long int ll;
+#define N 1000001
+
+bitset<N> Primes;
+
+void Sieve(){
+    Primes.set();
+    Primes[0]=Primes[1]=0;
+    for(ll i=2; i<N; i++){
+        if(Primes[i]){
+            for(ll j=i*i; j<N; j+=i){
+                Primes[j]=0;
             }
         }
     }
