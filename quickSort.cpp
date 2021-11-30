@@ -5,13 +5,14 @@ typedef long long int ll;
 ll partition(ll s, ll e, vector<ll>& v) {
     ll p = v[e];
     ll i = s - 1;
-    for (ll j = s; j <= e; j++) {
-        if (v[j] <= p) {
+    for (ll j = s; j<e; j++) {
+        if (v[j]<p){
             i++;
             swap(v[i], v[j]);
         }
     }
-    return i;
+    swap(v[i+1], v[e]);
+    return i+1;
 }
 
 void quickSort(ll s, ll e, vector<ll>& v) {
