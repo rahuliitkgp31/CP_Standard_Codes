@@ -23,7 +23,9 @@ void sieve(){
     for(ll i=2; i<Primes.size(); i++){
         if(Primes[i]==i){
             for(ll j=i*i; j<Primes.size(); j+=i){
-                Primes[j]=i;
+                if(primes[j]==j){
+                    Primes[j]=i;
+                }
             }
         }
     }
