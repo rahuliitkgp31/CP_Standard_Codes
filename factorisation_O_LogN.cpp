@@ -12,7 +12,7 @@ void Sieve(){
         if(ps[i]){
             primes.push_back(i);
             for(ll j=i*i; j<N; j+=i){
-                ps[j]=0;
+                ps[j]=i;
             }
         }
     }
